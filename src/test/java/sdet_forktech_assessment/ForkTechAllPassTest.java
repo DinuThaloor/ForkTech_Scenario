@@ -26,14 +26,17 @@ public class ForkTechAllPassTest extends BaseClass
 		
 		wLib.maximizeWindow(driver);
 		wLib.waitTillPageLoads(driver);
-		
-		String movieName=eLib.getDataFromExcel("MovieSheet", 1, 0);
+		String movieName=eLib.getDataFromExcel("MovieSheet", 2, 0);
 		WikipediaPage wiki=new WikipediaPage(driver);
 		wiki.getSearchtbx().sendKeys(movieName);
+		
 		wiki.getSearchicn().click();
-		WebElement page = driver.findElement(By.xpath("//html[@class='client-js ve-available']"));
-		WebElement descTable = driver.findElement(By.xpath("//table[@class='infobox vevent']"));
-		WebElement filmLink = driver.findElement(By.xpath("//a[contains(@title,'film')]"));
+		int count=wiki.getTables().size();
+		while(count==0) 
+		{
+			wiki.getFilmLink().click();
+			break;
+		}
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(0,600)");
 		String releaseDatewiki=wiki.getReleasedt().getText();
@@ -56,14 +59,14 @@ public class ForkTechAllPassTest extends BaseClass
 		String releaseDateIMDB=imdb.getReleasedt().getText();
 		String countryIMDB=imdb.getContryname().getText();
 		String []reldateIMDB=releaseDateIMDB.split(" ");
-		String Imdbdate=reldateIMDB[1].substring(0, 2);
+		String Imdbdate=reldateIMDB[1].replaceAll(",", "");
 		String Imdbmonth=reldateIMDB[0];
 		String Imdbyear=reldateIMDB[2];
 		String IMBDdate=Imdbdate+" "+Imdbmonth+" "+Imdbyear;
 		Reporter.log("IMDB data for "+movieName+" "+releaseDateIMDB+" "+countryIMDB,true);
 		
 		SoftAssert sa=new SoftAssert();
-		sa.assertEquals(IMBDdate, wikipediadate);
+		sa.assertEquals(IMBDdate, wikipediadate);//pass eventhough format change date same
 		Reporter.log("date pass",true);
 		sa.assertEquals(countrywiki, countryIMDB);
 		Reporter.log("country pass",true);

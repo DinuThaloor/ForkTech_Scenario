@@ -17,7 +17,7 @@ public class WikipediaPage
 	//declaration
 	@FindBy(xpath="//input[@class='vector-search-box-input']") private WebElement searchtbx;
 	@FindBy(xpath="//input[@id='searchButton']") private WebElement searchicn;
-	@FindBy(xpath="//table[@class='infobox vevent']/tbody/tr[contains(.,'Release date')]/descendant::div[@class='plainlist']") private WebElement releasedt;
+	@FindBy(xpath="//table[@class='infobox vevent']/tbody/tr[contains(.,'Release date')]/descendant::div[@class='plainlist']/descendant::li") private WebElement releasedt;
 	@FindBy(xpath="//table[@class='infobox vevent']/tbody/tr[contains(.,'Country')]/descendant::td[@class='infobox-data']") private WebElement contryname;
 	@FindBy(xpath="//table[@class='infobox vevent']") private List<WebElement> tables;
 	@FindBy(xpath="//a[contains(@title,'film')]") private WebElement filmLink;

@@ -33,6 +33,13 @@ public void forktechTech() throws Throwable
 	WikipediaPage wiki=new WikipediaPage(driver);
 	wiki.getSearchtbx().sendKeys(movieName);
 	wiki.getSearchicn().click();
+	
+	int count=wiki.getTables().size();
+	while(count==0) 
+	{
+		wiki.getFilmLink().click();
+		break;
+	}
 	JavascriptExecutor js=(JavascriptExecutor)driver;
 	js.executeScript("window.scrollBy(0,600)");
 	String releaseDatewiki=wiki.getReleasedt().getText();
@@ -49,8 +56,9 @@ public void forktechTech() throws Throwable
 	String releaseDateIMDB=imdb.getReleasedt().getText();
 	String countryIMDB=imdb.getContryname().getText();
 	Reporter.log("IMDB data for "+movieName+" "+releaseDateIMDB+" "+countryIMDB,true);
+	
 	SoftAssert sa=new SoftAssert();
-	sa.assertEquals(releaseDateIMDB, releaseDatewiki);
+	sa.assertEquals(releaseDateIMDB, releaseDatewiki);//fails since format change but date same
 	Reporter.log("date pass",true);
 	sa.assertEquals(countrywiki, countryIMDB);
 	Reporter.log("country pass",true);
