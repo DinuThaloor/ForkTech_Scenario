@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[wiki data for pushpa 17 December 2021 India]]>
+    </line>
+    <line>
+      <![CDATA[IMDB data for pushpa December 17, 2021 (United States) India]]>
+    </line>
+    <line>
+      <![CDATA[date pass]]>
+    </line>
+    <line>
+      <![CDATA[country pass]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-11-16T11:35:42 IST" name="Default suite" finished-at="2022-11-16T11:37:17 IST" duration-ms="95961">
+    <groups>
+    </groups>
+    <test started-at="2022-11-16T11:35:42 IST" name="Default test" finished-at="2022-11-16T11:37:17 IST" duration-ms="95961">
+      <class name="sdet_forktech_assessment.ForkTechAllPass">
+        <test-method is-config="true" signature="launchbrowser()[pri:0, instance:sdet_forktech_assessment.ForkTechAllPass@783a467b]" started-at="2022-11-16T11:35:42 IST" name="launchbrowser" finished-at="2022-11-16T11:35:59 IST" duration-ms="17615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchbrowser -->
+        <test-method signature="forktechTech()[pri:0, instance:sdet_forktech_assessment.ForkTechAllPass@783a467b]" started-at="2022-11-16T11:35:59 IST" name="forktechTech" finished-at="2022-11-16T11:37:15 IST" duration-ms="75719" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[wiki data for pushpa 17 December 2021 India]]>
+            </line>
+            <line>
+              <![CDATA[IMDB data for pushpa December 17, 2021 (United States) India]]>
+            </line>
+            <line>
+              <![CDATA[date pass]]>
+            </line>
+            <line>
+              <![CDATA[country pass]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- forktechTech -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:sdet_forktech_assessment.ForkTechAllPass@783a467b]" started-at="2022-11-16T11:37:15 IST" name="closeBrowser" finished-at="2022-11-16T11:37:17 IST" duration-ms="2523" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- sdet_forktech_assessment.ForkTechAllPass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
